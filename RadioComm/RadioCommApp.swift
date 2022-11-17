@@ -11,7 +11,7 @@ import SwiftUI
 struct RadioCommApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			RadioView(viewModel: RadioView.ViewModel(voiceService: VoiceService(audioService: AudioService(), multipeerService: MultipeerService())))
         }
     }
 }

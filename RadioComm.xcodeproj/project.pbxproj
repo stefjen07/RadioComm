@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E42047529263AE7002907DD /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E42047429263AE7002907DD /* Data+extension.swift */; };
+		3E758EDB2924225D00AEEBB7 /* PeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E758EDA2924225D00AEEBB7 /* PeerModel.swift */; };
 		3EB146F6291D095A000BDD62 /* RadioCommApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB146F5291D095A000BDD62 /* RadioCommApp.swift */; };
-		3EB146F8291D095A000BDD62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB146F7291D095A000BDD62 /* ContentView.swift */; };
+		3EB146F8291D095A000BDD62 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB146F7291D095A000BDD62 /* RadioView.swift */; };
 		3EB146FA291D095D000BDD62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB146F9291D095D000BDD62 /* Assets.xcassets */; };
 		3EB146FD291D095D000BDD62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB146FC291D095D000BDD62 /* Preview Assets.xcassets */; };
 		3EB14707291D095E000BDD62 /* RadioCommTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14706291D095E000BDD62 /* RadioCommTests.swift */; };
 		3EB14711291D095E000BDD62 /* RadioCommUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14710291D095E000BDD62 /* RadioCommUITests.swift */; };
 		3EB14713291D095E000BDD62 /* RadioCommUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14712291D095E000BDD62 /* RadioCommUITestsLaunchTests.swift */; };
+		3EB14720291D0A11000BDD62 /* OnTouchGestureModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1471F291D0A11000BDD62 /* OnTouchGestureModifier.swift */; };
+		3EB14722291D0B18000BDD62 /* RadioView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14721291D0B18000BDD62 /* RadioView-ViewModel.swift */; };
+		3EB14726291D4111000BDD62 /* VoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14725291D4111000BDD62 /* VoiceService.swift */; };
+		3EB14728291D480F000BDD62 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14727291D480F000BDD62 /* AudioService.swift */; };
+		3EB1472A291D4821000BDD62 /* MultipeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB14729291D4821000BDD62 /* MultipeerService.swift */; };
+		3EB1472C291D4BB5000BDD62 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1472B291D4BB5000BDD62 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E42047429263AE7002907DD /* Data+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
+		3E758EDA2924225D00AEEBB7 /* PeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerModel.swift; sourceTree = "<group>"; };
 		3EB146F2291D095A000BDD62 /* RadioComm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioComm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB146F5291D095A000BDD62 /* RadioCommApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCommApp.swift; sourceTree = "<group>"; };
-		3EB146F7291D095A000BDD62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3EB146F7291D095A000BDD62 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		3EB146F9291D095D000BDD62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EB146FC291D095D000BDD62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3EB14702291D095E000BDD62 /* RadioCommTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioCommTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +54,14 @@
 		3EB1470C291D095E000BDD62 /* RadioCommUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioCommUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB14710291D095E000BDD62 /* RadioCommUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCommUITests.swift; sourceTree = "<group>"; };
 		3EB14712291D095E000BDD62 /* RadioCommUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCommUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3EB1471F291D0A11000BDD62 /* OnTouchGestureModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTouchGestureModifier.swift; sourceTree = "<group>"; };
+		3EB14721291D0B18000BDD62 /* RadioView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadioView-ViewModel.swift"; sourceTree = "<group>"; };
+		3EB14723291D0D00000BDD62 /* RadioComm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RadioComm.entitlements; sourceTree = "<group>"; };
+		3EB14724291D3E6D000BDD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3EB14725291D4111000BDD62 /* VoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceService.swift; sourceTree = "<group>"; };
+		3EB14727291D480F000BDD62 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		3EB14729291D4821000BDD62 /* MultipeerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerService.swift; sourceTree = "<group>"; };
+		3EB1472B291D4BB5000BDD62 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +112,20 @@
 		3EB146F4291D095A000BDD62 /* RadioComm */ = {
 			isa = PBXGroup;
 			children = (
+				3EB14724291D3E6D000BDD62 /* Info.plist */,
+				3EB14723291D0D00000BDD62 /* RadioComm.entitlements */,
 				3EB146F5291D095A000BDD62 /* RadioCommApp.swift */,
-				3EB146F7291D095A000BDD62 /* ContentView.swift */,
+				3EB146F7291D095A000BDD62 /* RadioView.swift */,
+				3EB14721291D0B18000BDD62 /* RadioView-ViewModel.swift */,
+				3EB1471F291D0A11000BDD62 /* OnTouchGestureModifier.swift */,
+				3EB14725291D4111000BDD62 /* VoiceService.swift */,
+				3EB14727291D480F000BDD62 /* AudioService.swift */,
+				3EB14729291D4821000BDD62 /* MultipeerService.swift */,
+				3EB1472B291D4BB5000BDD62 /* Constants.swift */,
 				3EB146F9291D095D000BDD62 /* Assets.xcassets */,
 				3EB146FB291D095D000BDD62 /* Preview Content */,
+				3E758EDA2924225D00AEEBB7 /* PeerModel.swift */,
+				3E42047429263AE7002907DD /* Data+extension.swift */,
 			);
 			path = RadioComm;
 			sourceTree = "<group>";
@@ -257,8 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EB146F8291D095A000BDD62 /* ContentView.swift in Sources */,
+				3EB146F8291D095A000BDD62 /* RadioView.swift in Sources */,
+				3EB14726291D4111000BDD62 /* VoiceService.swift in Sources */,
+				3EB14728291D480F000BDD62 /* AudioService.swift in Sources */,
 				3EB146F6291D095A000BDD62 /* RadioCommApp.swift in Sources */,
+				3EB14720291D0A11000BDD62 /* OnTouchGestureModifier.swift in Sources */,
+				3E42047529263AE7002907DD /* Data+extension.swift in Sources */,
+				3EB1472A291D4821000BDD62 /* MultipeerService.swift in Sources */,
+				3EB14722291D0B18000BDD62 /* RadioView-ViewModel.swift in Sources */,
+				3E758EDB2924225D00AEEBB7 /* PeerModel.swift in Sources */,
+				3EB1472C291D4BB5000BDD62 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -414,17 +450,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RadioComm/RadioComm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RadioComm/Preview Content\"";
 				DEVELOPMENT_TEAM = S4TJY8UCM7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RadioComm/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Local network is used for audio streaming (radio communication)";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is used for audio streaming (radio communication)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,17 +484,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RadioComm/RadioComm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RadioComm/Preview Content\"";
 				DEVELOPMENT_TEAM = S4TJY8UCM7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RadioComm/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Local network is used for audio streaming (radio communication)";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is used for audio streaming (radio communication)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
