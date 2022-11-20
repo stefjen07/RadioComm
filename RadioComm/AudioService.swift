@@ -119,10 +119,7 @@ extension AudioService: StreamDelegate {
 				return
 			}
 
-			print("Reading bytes \(counter)")
-			counter += 1
-
-			guard let pcmBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: AVAudioFrameCount(audioFormat.sampleRate)) else {
+			guard let pcmBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: AVAudioFrameCount(audioFormat.sampleRate * 2)) else {
 				print("Stream reading failed")
 				return
 			}
@@ -130,24 +127,36 @@ extension AudioService: StreamDelegate {
 			pcmBuffer.frameLength = pcmBuffer.frameCapacity
 			let channels = UnsafeBufferPointer(start: pcmBuffer.floatChannelData, count: Int(pcmBuffer.format.channelCount))
 			playingData.withUnsafeBytes { src in
-				memcpy(channels[0], src, Int(audioFormat.sampleRate))
+				memcpy(channels[0], src, Int(audioFormat.sampleRate * 2))
 			}
 			playingData.removeFirst(Int(pcmBuffer.frameLength))
+
+			if !self.audioEngine.isRunning {
+				do {
+					try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, policy: .default, options: [.interruptSpokenAudioAndMixWithOthers])
+					try AVAudioSession.sharedInstance().setActive(true)
+
+					self.audioEngine = AVAudioEngine()
+
+					self.audioEngine.attach(self.player)
+					self.audioEngine.connect(self.player, to: self.audioEngine.outputNode, format: nil)
+					self.audioEngine.prepare()
+					try self.audioEngine.start()
+					self.player.play()
+				} catch {
+					print(error.localizedDescription)
+				}
+			}
 
 			DispatchQueue.main.async {
 				let convertedBuffer = self.convert(buffer: pcmBuffer, outputFormat: self.audioEngine.outputNode.inputFormat(forBus: 0), audioConverter: self.inputAudioConverter)
 				convertedBuffer.frameLength = convertedBuffer.frameCapacity
 
-				if !self.audioEngine.isRunning {
-					self.audioEngine.attach(self.player)
-					self.audioEngine.connect(self.player, to: self.audioEngine.mainMixerNode, format: convertedBuffer.format)
-					self.audioEngine.prepare()
-					try? self.audioEngine.start()
-					self.player.play()
-				}
 				self.player.volume = 1
-
-				self.player.scheduleBuffer(convertedBuffer, completionHandler: {})
+				self.player.scheduleBuffer(convertedBuffer, at: nil, options: .interrupts, completionHandler: {
+					self.counter += 1
+					print(self.counter)
+				})
 				print("Reading finished")
 			}
 		}
