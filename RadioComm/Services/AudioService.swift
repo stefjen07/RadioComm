@@ -57,7 +57,7 @@ class AudioService: NSObject, AudioServiceProtocol {
 			audioEngine.attach(mixer)
 			audioEngine.connect(input, to: mixer, format: input.outputFormat(forBus: 0))
 
-			mixer.installTap(onBus: 0, bufferSize: 1024, format: audioFormat) { buffer, when in
+			mixer.installTap(onBus: 0, bufferSize: 1024, format: audioFormat) { [unowned self] buffer, when in
 				let audioBuffer = buffer.audioBufferList.pointee.mBuffers
 
 				if let ptr = audioBuffer.mData {
