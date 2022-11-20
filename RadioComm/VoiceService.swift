@@ -14,7 +14,15 @@ protocol VoiceServiceProtocol {
 class VoiceService: VoiceServiceProtocol {
 	private var audioService: AudioServiceProtocol
 	private var multipeerService: MultipeerServiceProtocol
-	var isTalking: Bool = false
+	var isTalking: Bool = false {
+		didSet {
+			if isTalking {
+				audioService.startStreaming()
+			} else {
+				audioService.stopStreaming()
+			}
+		}
+	}
 
 	init(audioService: AudioServiceProtocol, multipeerService: MultipeerServiceProtocol) {
 		self.audioService = audioService

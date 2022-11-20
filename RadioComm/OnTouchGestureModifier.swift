@@ -19,7 +19,8 @@ private struct OnTouchGestureModifier: ViewModifier {
 
 	func body(content: Content) -> some View {
 		content
-			.simultaneousGesture(DragGesture(minimumDistance: 0)
+			.gesture(
+				DragGesture(minimumDistance: 0)
 				.onChanged { _ in
 					if !self.tapped {
 						self.tapped = true
@@ -29,6 +30,7 @@ private struct OnTouchGestureModifier: ViewModifier {
 				.onEnded { _ in
 					self.tapped = false
 					self.callback(self.tapped)
-				})
+				}
+			)
 	}
 }
