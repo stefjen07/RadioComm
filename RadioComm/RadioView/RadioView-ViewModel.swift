@@ -14,7 +14,7 @@ extension RadioView {
 
 		var voiceService: VoiceServiceProtocol
 
-		init(voiceService: VoiceServiceProtocol) {
+		init(voiceService: VoiceServiceProtocol = VoiceService(audioService: AudioService(), multipeerService: MultipeerService())) {
 			self.voiceService = voiceService
 		}
 
